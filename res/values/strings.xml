@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DatabaseProject</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="person_id">TC No</string>
+    <string name="name">İsim</string>
+    <string name="delete">Sil</string>
+    <string name="update">Güncelle</string>
+    <string name="insert">Yeni Kayıt Ekle</string>
+    <string name="show_last_updated">Son Eklenen Kaydı Göster</string>
+    <string name="no_records_to_show">Veritabanında kayıt bulunamadı!</string>
+    <string name="person_count">Toplam Kayıt Sayısını Göster</string>
+    <string name="fill_all_fields">Lütfen tüm alanları doldurunuz!</string>
+    <string name="saved_successfully">Bilgileriniz Başarıyla Kaydedildi.</string>
+    <string name="failed_saving">Bilgileriniz kaydedilirken hata oluştu!</string>
+    <string name="update_warning">Lütfen güncellemek istediğiniz kişinin TC\' sini giriniz. İsim alanına öncekinden farklı bir isim giriniz.</string>
+    <string name="delete_warning">Lütfen yukarıdaki alana, silmek istediğiniz kişinin TC\' sini giriniz.</string>
+
+</resources>
