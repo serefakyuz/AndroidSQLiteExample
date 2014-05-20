@@ -69,13 +69,13 @@ public class SqliteHelper extends SQLiteOpenHelper {
 		}
 	}
 
-	public void insertPersons(List<Person> persons) {
+	public void insertPeople(List<Person> people) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values;
-		for (int i = 0; i < persons.size(); i++) {
+		for (int i = 0; i < people.size(); i++) {
 			values = new ContentValues();
-			values.put(KEY_PERSON_ID, persons.get(i).getID());
-			values.put(KEY_NAME, persons.get(i).getName());
+			values.put(KEY_PERSON_ID, people.get(i).getID());
+			values.put(KEY_NAME, people.get(i).getName());
 			db.insert(TABLE_PERSON, null, values);
 		}
 		db.close();
@@ -99,9 +99,9 @@ public class SqliteHelper extends SQLiteOpenHelper {
 		return person;
 	}
 
-	// Get All Persons
-	public List<Person> getAllPersons() {
-		List<Person> allPersons = new ArrayList<Person>();
+	// Get All People
+	public List<Person> getAllPeople() {
+		List<Person> allPeople = new ArrayList<Person>();
 		// Select All Query
 		String selectQuery = "SELECT  * FROM " + TABLE_PERSON;
 
@@ -113,18 +113,18 @@ public class SqliteHelper extends SQLiteOpenHelper {
 				Person person = new Person();
 				person.setID(cursor.getString(0));
 				person.setName(cursor.getString(1));
-				allPersons.add(person);
+				allPeople.add(person);
 			} while (cursor.moveToNext());
 		}
 
-		return allPersons;
+		return allPeople;
 	}
 
 	/**
 	 * @param person
 	 * @return
 	 */
-	public Person getLastUpdatedPerson() {
+	public Person getLastInsertedPerson() {
 		// Select All Query
 		String selectQuery = "SELECT * FROM " + TABLE_PERSON;
 
@@ -167,8 +167,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
 		db.close();
 	}
 
-	// Getting contacts Count
-	public int getPersonsCount() {
+	// Getting people Count
+	public int getPeopleCount() {
 		String countQuery = "SELECT  * FROM " + TABLE_PERSON;
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery(countQuery, null);

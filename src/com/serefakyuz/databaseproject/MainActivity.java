@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
 
 				case R.id.buttonShowLastUpdated:
 
-					final Person person = mSqliteHelper.getLastUpdatedPerson();
+					final Person person = mSqliteHelper.getLastInsertedPerson();
 					if(person != null){
 								twTC.setText("TC: " + person.getID());
 								twName.setText("İsim: " + person.getName());								
@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
 				default:
 					break;
 				}
-				twRecordCount.setText("Kayıt Sayısı: " + Integer.toString(mSqliteHelper.getPersonsCount()));
+				twRecordCount.setText("Kayıt Sayısı: " + Integer.toString(mSqliteHelper.getPeopleCount()));
 			}
 		};
 		initViews();
@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
 	private void initViews(){
 
 		twRecordCount = (TextView)findViewById(R.id.textViewRecordCount);
-		twRecordCount.setText("Kayıt Sayısı: " + Integer.toString(mSqliteHelper.getPersonsCount()));
+		twRecordCount.setText("Kayıt Sayısı: " + Integer.toString(mSqliteHelper.getPeopleCount()));
 		
 		etTC = (EditText)findViewById(R.id.editTextId);
 		etName = (EditText)findViewById(R.id.editTextName);
